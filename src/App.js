@@ -27,6 +27,17 @@ class App extends Component {
       .catch(err => console.error(err));
   };
 
+  componentDidMount = () => {
+    axios
+    .get("/api/auth")
+    .then(response =>
+      this.setState({
+        username: response.data.username,
+        id: response.data.id
+      }))
+    .catch(error => console.log(error))
+  }
+
   render() {
     return (
       <BrowserRouter>
