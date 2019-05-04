@@ -1,0 +1,31 @@
+.content {
+    background-color: #F9F6F6;
+  }
+  
+  .first-header {
+    background-image: url('https://media.karousell.com/media/photos/products/2018/02/12/the_resistance_avalon__board_game_1518416438_790befd30');
+    width: 100%;
+    height: 400px;
+  }
+  
+  .second-header {
+    background-image: url('https://www.understood.org/~/media/aae87173ae3644c89c48274820bcb2c2.jpg');
+    width: 100%;
+    height: 400px;
+  }
+  
+  .third-header {
+    background-image: url('https://www.understood.org/~/media/dd2fd0a5d1fa4dc3b4079bcc08cac824.jpg?h=979&la=en&w=1740');
+    width: 100%;
+    height: 400px;
+  }
+  
+ 
+  
+  .first-header, .second-header, .third-header {
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+  }
+  

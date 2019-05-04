@@ -1,4 +1,3 @@
 export default {
-  rootPath:
-    process.env.REACT_APP_STATE === "localhost" ? "http://localhost:6969" : "https://tk-hotgirlserver.herokuapp.com"
+  rootPath: "https://toystore-backend.herokuapp.com"
 };

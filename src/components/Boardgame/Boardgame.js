@@ -1,0 +1,51 @@
+import React, { Component } from 'react'
+import "./Boardgame.css"
+import axios from '../../axios';
+import {Link} from 'react-router-dom'
+import shopping_cart from "../../img/cart.svg"
+export default class Boardgame extends Component {
+  state = {
+    products: ""
+  }
+  componentDidMount = () => {
+    axios
+      .get(`/api/products/type/boardgame`)
+      .then(data => {
+        this.setState({products: data.data})
+        console.log(this.state.products)
+      })
+      .catch(err => console.log(err))
+  }
+  render() {
+    let allBoardGameProducts = ""
+    if (this.state.products)
+    {
+      allBoardGameProducts = this.state.products.map(product =>(
+        <div className="item">
+        <Link to={`/products/${product._id}`}>
+        <div className="product-img">
+          <img alt={product.name} src={product.image} />
+        </div>
+        <div className="product-details">
+          <h1 id="product-name">{product.name}</h1>
+          <h4 id="product-description">{product.description}</h4>
+        </div>
+        </Link>
+        <div className="price-add">
+          <h5 id="product-price">${product.price}</h5>
+          <Link to="/cart"><img src={shopping_cart}/></Link>
+        </div>
+        </div>
+      ));
+    }
+  
+    return (
+      <div className="boardgame-products">
+        <div className="boardgame-title">
+          <h4>Board Game List</h4>
+        </div>
+        <div className="items">{allBoardGameProducts}</div>
+      </div>
+    )
+  }
+}
