@@ -8,7 +8,7 @@ export default class Signin extends Component {
   responseFacebook = (data) => {
     console.log(data)
     axios
-    .post(`/api/auth/facebook`)
+    .post(`/api/auth/facebook?access_token=${data.accessToken}`)
     .then(result => {
       if (result.data.token){
         const {token, user} = result.data
@@ -16,6 +16,7 @@ export default class Signin extends Component {
         this.props.createNewUser(user)
       }
     })
+    .catch(err => console.log(err))
   }
 
   render() {

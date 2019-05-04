@@ -9,7 +9,7 @@ import Signin from '../../Signin/Signin'
 
 export default class NavBar extends Component {
     renderAuthButton = () => {
-        return this.props.isAuthenticated == true?
+        return this.props.isAuthenticated === true?
          (<Button className="danger" onClick={this.handleAuthClick}>Log out</Button>) :
          (<Signin createNewUser={this.createNewUser}/>)
     }
