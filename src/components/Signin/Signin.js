@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import "./Signin.css"
 import axios from '../../axios'
+import localStorage from 'localStorage'
 
 export default class Signin extends Component {
   responseFacebook = (data) => {
