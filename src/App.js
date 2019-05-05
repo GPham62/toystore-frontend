@@ -9,6 +9,7 @@ import Boardgame from './components/Boardgame/Boardgame'
 import Educational from './components/Educational/Educational'
 import About from './components/About/About'
 import Cart from './components/Cart/Cart'
+import Admin from './components/Admin/Admin'
 import localStorage from 'localStorage'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -74,6 +75,8 @@ class App extends Component {
              <Route exact path="/about" component={About}/>
 
              <Route exact path="/cart" component={Cart}/>
+
+             <Route exact path="/admin" component={Admin}/>
           </Switch>
         </BaseLayout>
       </BrowserRouter>
