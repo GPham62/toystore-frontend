@@ -9,6 +9,7 @@ import Signin from '../../Signin/Signin'
 
 export default class NavBar extends Component {
     renderAuthButton = () => {
+        console.log(this.props.isAuthenticated)
         return this.props.isAuthenticated === true?
          (<Button className="danger" onClick={this.handleAuthClick}>Log out</Button>) :
          (<Signin/>)
