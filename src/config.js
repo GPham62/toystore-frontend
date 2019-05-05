@@ -1,3 +1,3 @@
 export default {
-  rootPath: "https://toystore-backend.herokuapp.com"
+  rootPath: "localhost:6969"
 };

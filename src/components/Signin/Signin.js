@@ -6,7 +6,7 @@ import localStorage from 'localStorage'
 
 export default class Signin extends Component {
   responseFacebook = (data) => {
-    console.log(data)
+    console.log("before ",data)
     axios
     .post(`/api/auth/facebook/token?access_token=${data.accessToken}`)
     .then(result => {
