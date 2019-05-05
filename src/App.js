@@ -40,7 +40,7 @@ class App extends Component {
   }
 
   isAuthenticated = () => {
-    if (localStorage.getItem('jwt auth') != null && this.state.userId === localStorage.getItem('current user')){
+    if (localStorage.getItem('jwt auth') && this.state.userId === localStorage.getItem('current user')){
       return true
     }
     else return false;
