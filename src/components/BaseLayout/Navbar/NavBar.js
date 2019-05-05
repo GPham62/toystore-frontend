@@ -11,16 +11,13 @@ export default class NavBar extends Component {
     renderAuthButton = () => {
         return this.props.isAuthenticated === true?
          (<Button className="danger" onClick={this.handleAuthClick}>Log out</Button>) :
-         (<Signin createNewUser={this.createNewUser}/>)
+         (<Signin/>)
     }
 
     handleAuthClick = () => {
         localStorage.removeItem('jwt auth')
     }
 
-    createNewUser = (user) => {
-        console.log("user: ",user)
-    }
     render() {
         return (
         <div>

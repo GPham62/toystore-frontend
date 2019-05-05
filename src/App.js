@@ -17,7 +17,8 @@ import 'mdbreact/dist/css/mdb.css';
 
 class App extends Component {
   state = {
-    searchString: ""
+    searchString: "",
+    userId: ""
   };
 
   onSearchChanged = (text) => {
@@ -34,8 +35,12 @@ class App extends Component {
     if (this.isAuthenticated == true) console.log("auth success")
   }
 
+  setUserID = (id) => {
+    this.setState({userId: id})
+  }
+
   isAuthenticated = () => {
-    if (localStorage.getItem('jwt auth') != null){
+    if (localStorage.getItem('jwt auth') != null && this.state.userId === localStorage.getItem('current user')){
       return true
     }
     else return false;
@@ -45,7 +50,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <BaseLayout onSearchChanged={this.onSearchChanged} isAuthenticated={this.isAuthenticated}>
+        <BaseLayout onSearchChanged={this.onSearchChanged} isAuthenticated={this.isAuthenticated} setUserID={this.setUserID}>
           <Switch>
             <Route exact path="/"
              render={props => {

@@ -14,7 +14,8 @@ export default class Signin extends Component {
       if (result.data.token){
         const {token, user} = result.data
         localStorage.setItem('jwt auth', token)
-        this.props.createNewUser(user)
+        localStorage.setItem('current user', user._id)
+        this.props.setUserID(user._id)
       }
     })
     .catch(err => console.log(err))

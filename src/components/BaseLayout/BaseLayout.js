@@ -38,7 +38,7 @@ export default class BaseLayout extends Component {
     return (
       <div>
         <div className={className}>
-            <NavBar onSearchChanged={this.props.onSearchChanged} isAuthenticated = {this.props.isAuthenticated}/>
+            <NavBar onSearchChanged={this.props.onSearchChanged} isAuthenticated = {this.props.isAuthenticated} setUserID={this.props.setUserID}/>
             <Header/>
             <div className="content">
                 {this.props.children}
