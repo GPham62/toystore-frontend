@@ -10,6 +10,7 @@ export default class Signin extends Component {
     axios
     .post(`/api/auth/facebook/token?access_token=${data.accessToken}`)
     .then(result => {
+      console.log("access w/ fb")
       if (result.data.token){
         const {token, user} = result.data
         localStorage.setItem('jwt auth', token)

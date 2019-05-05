@@ -19,7 +19,7 @@ export default class NavBar extends Component {
     }
 
     createNewUser = (user) => {
-        console.log(user)
+        console.log("user: ",user)
     }
     render() {
         return (
