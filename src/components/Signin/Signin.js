@@ -7,9 +7,8 @@ import localStorage from 'localStorage'
 export default class Signin extends Component {
   responseFacebook = (data) => {
     console.log(data)
-    const token = data.accessToken
     axios
-    .post(`/api/auth/facebook/${token}`)
+    .post(`/api/auth/facebook/token?access_token=${data.accessToken}`)
     .then(result => {
       if (result.data.token){
         const {token, user} = result.data
