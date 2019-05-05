@@ -14,7 +14,7 @@ export default class Signin extends Component {
       if (result.data.token){
         const {token, user} = result.data
         localStorage.setItem('jwt auth', token)
-        localStorage.setItem('current user', user._id)
+        localStorage.setItem('current user', user.avatar)
       }
     })
     .catch(err => console.log(err))

@@ -6,6 +6,7 @@ import home from "../../../img/home.svg"
 import SearchField from "../SearchField/SearchField"
 import { Button } from 'mdbreact';
 import Signin from '../../Signin/Signin'
+import localStorage from 'localStorage'
 
 export default class NavBar extends Component {
     renderAuthButton = () => {
@@ -21,6 +22,14 @@ export default class NavBar extends Component {
         localStorage.removeItem('jwt auth')
     }
 
+    renderAvatar = () => {
+        const avatar = localStorage.getItem('current user')
+        if (avatar)
+        {
+            return <img src={avatar} alt="user avatar"/>
+        }
+    }
+
     render() {
         return (
         <div>
@@ -30,6 +39,7 @@ export default class NavBar extends Component {
                 <li><NavLink activeClassName="selected" className="nav-link" exact to="/"><img src={home}/></NavLink></li>
                 <li><NavLink activeClassName="selected" className="nav-link" to="/about">About me</NavLink></li>
                 <li><SearchField onSearchChanged={this.props.onSearchChanged}/></li>
+                <li>{this.renderAvatar()}</li>
             </ul>
             </div>
             <div className="shopping-cart">
