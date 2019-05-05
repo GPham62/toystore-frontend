@@ -20,6 +20,7 @@ export default class NavBar extends Component {
 
     handleAuthClick = () => {
         localStorage.removeItem('jwt auth')
+        localStorage.removeItem('current user')
     }
 
     renderAvatar = () => {
